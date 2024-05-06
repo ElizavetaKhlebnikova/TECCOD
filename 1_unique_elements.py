@@ -25,18 +25,22 @@ def get_unique_elements_with_preserved_order(items: List[int]) -> List[int]:
 
 class UniqueElementsWithoutPreservedOrderTestCase(unittest.TestCase):
     def test_correct(self):
+        #проверка отсутствия дубликатов в списке, возвращаемом функцией get_unique_elements_without_preserved_order
         test_list = [1, 2, 3, 4, 4, 2]
         result = get_unique_elements_without_preserved_order(test_list)
         self.assertEqual(sorted(result), [1, 2, 3, 4])
+        #проверка работы функции get_unique_elements_without_preserved_order с пустым списком
         test_list = []
         result = get_unique_elements_without_preserved_order(test_list)
         self.assertEqual(result, [])
 
 class UniqueElementsWithPreservedOrderTestCase(unittest.TestCase):
     def test_correct(self):
+        # проверка отсутствия дубликатов и сохранения порядка в списке, возвращаемом функцией get_unique_elements_with_preserved_order
         test_list = [1, 1, 3, 4, 4, 2]
         result = get_unique_elements_with_preserved_order(test_list)
         self.assertEqual(result, [1, 3, 4, 2])
+        # проверка работы функции get_unique_elements_with_preserved_order с пустым списком
         test_list = []
         result = get_unique_elements_with_preserved_order(test_list)
         self.assertEqual(result, [])
